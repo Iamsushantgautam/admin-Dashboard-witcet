@@ -1,0 +1,265 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+  }
+  
+  .nav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  }
+  /* Base Styles */
+
+
+/* Header */
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Container for cards */
+.pyq-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Card Styles */
+.pyq-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 1s ease-in-out;
+}
+
+/* Card Hover Effect */
+.pyq-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.pyq-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #eee;
+}
+
+/* Card Body */
+.pyq-card-body {
+    padding: 15px;
+}
+
+/* Title of the note */
+.pyq-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Description & Links */
+.pyq-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.pyq-card a {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pyq-card a:hover {
+    color: #0056b3;
+}
+
+/* Footer for the card */
+.pyq-card-footer {
+    background-color: #f7f7f7;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #eee;
+}
+
+.pyq-card-footer .btn {
+    font-size: 0.875rem;
+    padding: 6px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.pyq-card-footer .btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .pyq-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pyq-card {
+        width: 90%;
+    }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 992px) {
+    .pyq-card {
+        width: 45%;
+    }
+}
+
+/* Animation Keyframes */
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-up Effect */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+  .container {
+    max-width: 720px;
+  }
+  
+  input.form-control,
+  select.form-control {
+    box-shadow: none !important;
+    border-radius: 8px;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #0d6efd !important;
+    transform: scale(1.05);
+    transition: 0.3s ease;
+  }
+  
+  .btn {
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  
+  .card {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  
+  .sidebar .nav-link {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: 0.2s;
+  }
+  
+  .sidebar .nav-link:hover,
+  .sidebar .nav-link.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  
+  .sidebar {
+    background-color: #343a40;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    width: 220px;
+    top: 0;
+    left: 0;
+    color: white;
+  }
+  
+  .sidebar h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar .nav-link {
+    color: #cbd5e0;
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .sidebar .nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+  
+  .content {
+    margin-left: 240px;
+    padding: 2rem;
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+  
+  .btn {
+    border-radius: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      position: relative;
+      height: auto;
+      width: 100%;
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+  

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previous Year Question Papers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .pyq-card {
+      border: 1px solid #007bff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .pyq-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .card-text {
+      color: #555;
+    }
+
+    .btn-pyq {
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-pyq:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+    <br><br>
+    <%- include('partials/navbar') %>
+
+    
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Quantum</h2>
+    <div class="row">
+      <% if (notes.length > 0) { %>
+        <% notes.forEach(note => { %>
+          <div class="col-md-4">
+            <div class="card pyq-card">
+              <img src="<%= note.quantumImagePath %>" class="card-img-top" alt="Note Image">
+              <div class="card-body">
+                <h5 class="card-title"><%= note.title %></h5>
+                <p class="card-text"><%= note.quantumTitle %></p>
+                <a href="<%= note.pyq %>" class="btn btn-pyq" target="_blank">View PYQ</a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p class="text-center">No previous year question papers available.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Detailed Notes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .form-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .unit-block {
+      background-color: #f1f5f9;
+      border-left: 5px solid #0d6efd;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .btn-outline-primary:hover {
+      background-color: #0d6efd;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+
+  <div class="container py-5">
+    <div class="form-container">
+      <h3 class="text-center text-primary mb-4">Add Detailed Notes</h3>
+     
+      
+      
+      <form action="/detailednotes" method="POST">
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Notes Title:</label>
+          <input type="text" name="notesTitle" class="form-control" placeholder="e.g., Computer Networks" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Notes Code:</label>
+          <input type="text" name="notesCode" class="form-control" placeholder="e.g., CN301" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Intro Title:</label>
+          <input type="text" name="introTitle" class="form-control" placeholder="e.g., Introduction to Networks" required>
+        </div>
+
+        <h5 class="text-secondary fw-bold mb-3">Units</h5>
+        <div id="unitsContainer"></div>
+
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-outline-primary" onclick="addUnit()">+ Add Unit</button>
+          <button type="submit" class="btn btn-success">Save Notes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let unitCount = 0;
+
+    function addUnit() {
+      const container = document.getElementById("unitsContainer");
+
+      const unitBlock = document.createElement("div");
+      unitBlock.className = "unit-block mb-3";
+
+      unitBlock.innerHTML = `
+        <h6 class="text-primary fw-bold">Unit ${unitCount + 1}</h6>
+        <div class="mb-2">
+          <input type="text" name="units[${unitCount}][unitTitle]" class="form-control" placeholder="Unit Title" required>
+        </div>
+        <div class="mb-2">
+          <input type="text" name="units[${unitCount}][ownerName]" class="form-control" placeholder="Owner Name" required>
+        </div>
+        <div class="mb-2">
+          <input type="text" name="units[${unitCount}][pdfLink]" class="form-control" placeholder="PDF Link" required>
+        </div>
+      `;
+
+      container.appendChild(unitBlock);
+      unitCount++;
+    }
+
+    // Add the first unit on page load
+    window.onload = addUnit;
+  </script>
+
+</body>
+</html>
