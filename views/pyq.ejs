@@ -53,7 +53,7 @@
     <h2 class="text-center mb-4">Previous Year Question Papers</h2>
     <div class="row">
       <% if (notes.length > 0) { %>
-        <% notes.forEach(note => { %>
+        <% notes.slice().reverse().forEach(note => { %>
           <div class="col-md-4">
             <div class="card pyq-card">
               <img src="<%= note.imagePath %>" class="card-img-top" alt="Note Image">

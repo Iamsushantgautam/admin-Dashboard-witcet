@@ -61,6 +61,13 @@ function convertGoogleDriveLink(link) {
   return match ? `https://drive.google.com/uc?export=view&id=${match[1]}` : link;
 }
 
+// Convert Google Drive link to direct download link
+function convertGoogleDriveDownloadLink(link) {
+  const match = link.match(/\/d\/(.+?)\//);
+  return match ? `https://drive.google.com/uc?export=download&id=${match[1]}` : link;
+}
+
+
 // Detailed Notes
 router.get("/detailNotesForm", (req, res) => {
   res.render("detailNotesForm");
@@ -143,20 +150,35 @@ router.post("/detailednotes/delete/:id", async (req, res) => {
 router.post("/add-note", isAuthenticated, async (req, res) => {
   try {
     const {
-      title, notesPagePath, imagePath,
-      quantumTitle, quantumImagePath, quantumLink,
-      tag, pyqLink, pyqTitle, pyqImage
+      title,
+      notesPagePath,
+      imagePath,
+      quantumTitle,
+      quantumImagePath,
+      quantumLink,
+      tag,
+      pyqLink,
+      pyqTitle,
+      pyqImage
     } = req.body;
 
+    // Format Google Drive links
     const formattedImagePath = convertGoogleDriveLink(imagePath);
     const formattedQuantumImagePath = convertGoogleDriveLink(quantumImagePath);
+    const formattedQuantumLink = convertGoogleDriveDownloadLink(quantumLink);
+    const formattedPyqLink = convertGoogleDriveDownloadLink(pyqLink);
 
     const newNote = new Note({
-      title, notesPagePath,
+      title,
+      notesPagePath,
       imagePath: formattedImagePath,
       quantumTitle,
       quantumImagePath: formattedQuantumImagePath,
-      quantumLink, tag, pyqLink, pyqTitle, pyqImage
+      quantumLink: formattedQuantumLink,
+      tag,
+      pyqLink: formattedPyqLink,
+      pyqTitle,
+      pyqImage
     });
 
     await newNote.save();

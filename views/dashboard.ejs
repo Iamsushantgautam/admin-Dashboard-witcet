@@ -42,7 +42,7 @@
       </div>
     <% } else { %>
       <div class="row" id="notesContainer">
-        <% notes.forEach(note => { %>
+        <% notes.slice().reverse().forEach(note => { %>
           <div class="col-md-6 col-lg-4 mb-4 note-card">
             <div class="card h-100 shadow-sm">
               
