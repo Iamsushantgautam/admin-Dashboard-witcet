@@ -14,7 +14,7 @@
       background-color: white;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
     .unit-block {
       background-color: #f1f5f9;
@@ -22,13 +22,6 @@
       padding: 1rem;
       border-radius: 6px;
       margin-bottom: 1rem;
-      position: relative;
-    }
-    .remove-unit-btn {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -40,7 +33,6 @@
       <h3 class="text-center text-primary mb-4">Add Detailed Notes</h3>
 
       <form action="/detailednotes" method="POST">
-
         <div class="mb-3">
           <label class="form-label fw-bold">Notes Title:</label>
           <input type="text" name="notesTitle" class="form-control" placeholder="e.g., Computer Networks" required>
@@ -76,7 +68,11 @@
       const unitBlock = document.createElement("div");
       unitBlock.className = "unit-block";
       unitBlock.innerHTML = `
-        <button type="button" class="btn btn-sm btn-danger remove-unit-btn" onclick="this.parentElement.remove()">Remove</button>
+        <div class="d-flex justify-content-end gap-2 mb-2">
+          <button type="button" class="btn btn-sm btn-danger" onclick="this.closest('.unit-block').remove()">Remove</button>
+          <button type="button" class="btn btn-sm btn-secondary" onclick="moveUp(this)">↑</button>
+          <button type="button" class="btn btn-sm btn-secondary" onclick="moveDown(this)">↓</button>
+        </div>
         <div class="mb-2">
           <input type="text" name="units[${unitCount}][unitTitle]" class="form-control" value="${unit.unitTitle || ''}" placeholder="Unit Title" required>
         </div>
@@ -92,9 +88,23 @@
       unitCount++;
     }
 
-    // Add one unit by default
+    function moveUp(button) {
+      const current = button.closest('.unit-block');
+      const prev = current.previousElementSibling;
+      if (prev) {
+        current.parentNode.insertBefore(current, prev);
+      }
+    }
+
+    function moveDown(button) {
+      const current = button.closest('.unit-block');
+      const next = current.nextElementSibling;
+      if (next) {
+        current.parentNode.insertBefore(next, current);
+      }
+    }
+
     window.onload = () => addUnit();
   </script>
-
 </body>
 </html>
