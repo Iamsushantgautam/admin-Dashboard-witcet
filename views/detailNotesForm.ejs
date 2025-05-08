@@ -21,23 +21,24 @@
       border-left: 5px solid #0d6efd;
       padding: 1rem;
       border-radius: 6px;
+      margin-bottom: 1rem;
+      position: relative;
     }
-    .btn-outline-primary:hover {
-      background-color: #0d6efd;
-      color: white;
+    .remove-unit-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <%- include('partials/navbar') %>
 
-
   <div class="container py-5">
     <div class="form-container">
       <h3 class="text-center text-primary mb-4">Add Detailed Notes</h3>
-     
-      
-      
+
       <form action="/detailednotes" method="POST">
 
         <div class="mb-3">
@@ -47,7 +48,7 @@
 
         <div class="mb-3">
           <label class="form-label fw-bold">Notes Code:</label>
-          <input type="text" name="notesCode" class="form-control" placeholder="e.g., CN301" required>
+          <input type="text" name="notesCode" class="form-control" placeholder="e.g., CN301">
         </div>
 
         <div class="mb-3">
@@ -69,22 +70,21 @@
   <script>
     let unitCount = 0;
 
-    function addUnit() {
+    function addUnit(unit = {}) {
       const container = document.getElementById("unitsContainer");
 
       const unitBlock = document.createElement("div");
-      unitBlock.className = "unit-block mb-3";
-
+      unitBlock.className = "unit-block";
       unitBlock.innerHTML = `
-        <h6 class="text-primary fw-bold">Unit ${unitCount + 1}</h6>
+        <button type="button" class="btn btn-sm btn-danger remove-unit-btn" onclick="this.parentElement.remove()">Remove</button>
         <div class="mb-2">
-          <input type="text" name="units[${unitCount}][unitTitle]" class="form-control" placeholder="Unit Title" required>
+          <input type="text" name="units[${unitCount}][unitTitle]" class="form-control" value="${unit.unitTitle || ''}" placeholder="Unit Title" required>
         </div>
         <div class="mb-2">
-          <input type="text" name="units[${unitCount}][ownerName]" class="form-control" placeholder="Owner Name" required>
+          <input type="text" name="units[${unitCount}][ownerName]" class="form-control" value="${unit.ownerName || ''}" placeholder="Owner Name" required>
         </div>
         <div class="mb-2">
-          <input type="text" name="units[${unitCount}][pdfLink]" class="form-control" placeholder="PDF Link" required>
+          <input type="text" name="units[${unitCount}][pdfLink]" class="form-control" value="${unit.pdfLink || ''}" placeholder="PDF Link" required>
         </div>
       `;
 
@@ -92,8 +92,8 @@
       unitCount++;
     }
 
-    // Add the first unit on page load
-    window.onload = addUnit;
+    // Add one unit by default
+    window.onload = () => addUnit();
   </script>
 
 </body>

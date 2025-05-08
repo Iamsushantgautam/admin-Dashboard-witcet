@@ -1,0 +1,155 @@
+[
+   
+    {
+        "notesTitle": "Software Project Management",
+        "notesCode": "BOE 068",
+        "introTitle": "SPM (BOE 068)",
+        "units": [
+          {
+            "unitTitle": "Unit 1 : Project Evaluation and Project Planning",
+            "ownerName": "MutliAtom",
+            "pdfLink": "https://drive.google.com/uc?export=download&id=1Cec_36mfI0UDiCDhXN3mCBSSwrdg93S3"
+          },
+          {
+            "unitTitle": "Unit 2 : Project Life Cycle and Effort Estimation",
+            "ownerName": "MutliAtom",
+            "pdfLink": "https://drive.google.com/uc?export=download&id=1qojSL8NUKQwSvQU3G_UB4aARJNUTvSK5"
+          },
+          {
+            "unitTitle": "Unit 3 : Activity Planning and Risk Management",
+            "ownerName": "MultiAtom",
+            "pdfLink": "https://drive.google.com/uc?export=download&id=17KnqVFLmUW05ejCYZ9n8NlBA7itd9Fw8"
+          },
+          {
+            "unitTitle": "Unit 4 : Project Management and Control",
+            "ownerName": "MultiAtom",
+            "pdfLink": "https://drive.google.com/uc?export=download&id=1Zm4uyOAvg_0ls7NlxnUfELWTUHby7Toe"
+          },
+          {
+            "unitTitle": "Unit 5 : Staffing in Software Projects",
+            "ownerName": "MultiAtom",
+            "pdfLink": "https://drive.google.com/uc?export=download&id=1rXvhvA7m930EA3Z0LUwssC5ZoQGpyhTY"
+          }
+        ]
+      },
+      
+        {
+          "notesTitle": "Computer Organization and Architecture Notes",
+          "notesCode": "BCS302",
+          "introTitle": "Computer Organization and Architecture BCS 302",
+          "units": [
+            {
+              "unitTitle": "Module I: Introduction",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=1uGdpgXcB_remjczvNJ2avUL_3ITS2KYr"
+            },
+            {
+              "unitTitle": "All 5 units of MultiAtom",
+              "ownerName": "MultiAtom",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=12ipNITryhNyivmZRrd4nWWIMKRvI1e5N"
+            },
+            {
+              "unitTitle": "COA Complete 5 Units Notes",
+              "ownerName": "RRSIMT",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=1G7INFfpVKA77XkyNO9Ewt_8Mqm708Xv4"
+            },
+            {
+              "unitTitle": "Module V: Input/Output",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=1_Pk5179qDPBZ7ntMhL2pEhegADK9YC2R"
+            }
+          ]
+        },
+        {
+          "notesTitle": "Discrete Structures & Theory of Logic Notes",
+          "notesCode": "BCS303",
+          "introTitle": "DSTL (BCS303 oneshort)",
+          "units": [
+            {
+              "unitTitle": "Unit 1 : Set Theory & Relations, POSET & Lattices",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=19XvS4j0ULrCcInf7e7FIt0K4QFQmfXcR"
+            },
+            {
+              "unitTitle": "Unit 2 : function ,Boolean Algebra",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=19VnB1na0avmqsoBWhMaFmR_p_rxXSnEu"
+            },
+            {
+              "unitTitle": "Unit 3 : Theory of Logics",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=19Tf-JOYTPM9k3HWKoOoc2JWZIqJN3I1U"
+            },
+            {
+              "unitTitle": "Unit 4 : Algebraic Structures",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=19T36OBOBEX77gmyewvvqeaHG8bk28_4r"
+            },
+            {
+              "unitTitle": "Unit 5 : Graphs ,Combinatoric",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=19NEu4UAYN3-V9L2smH75nYtlw_TxhT11"
+            },
+            {
+              "unitTitle": "DSTL Handwriting Notes Unit 01",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=19igk6YMu--Yjl_K70nn-qCxQLh6qhURq"
+            },
+            {
+              "unitTitle": "DSTL Handwriting Notes Unit 02,03,04,05",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=19XvlGNBQ20nqsiAxBW3G4ayKrEqgM7NG"
+            }
+          ]
+        },
+        {
+          "notesTitle": "Universal Human Values and Professional Ethics",
+          "notesCode": "BVE301 / BVE401/ BVE301H / BVE401H",
+          "introTitle": "UHV BVE301 / BVE401/BVE301H / BVE401H",
+          "units": [
+            {
+              "unitTitle": "UNIT-1 Introduction to Value Education",
+              "ownerName": "Gateway",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=11H5Aw9oeeVXfLdYTWU5gB17BcjqONLPS"
+            },
+            {
+              "unitTitle": "UNIT-1 Introduction to Value Education",
+              "ownerName": "RRSIMT",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=10sY_jUzDBZcIQr3rHky2_7WBhZgGveKy"
+            },
+            {
+              "unitTitle": "UNIT-2 Understanding Harmony in the Human Being",
+              "ownerName": "Gateway",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=11J1iowaHc7BZf4wij_puYp3AKvjrhJHe"
+            },
+            {
+              "unitTitle": "UNIT-2 Understanding Harmony in the Human Being",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=11Bxq_syDqHid3ChvMyPKPSdNhk-gjmdr"
+            },
+            {
+              "unitTitle": "UNIT-3 Understanding Harmony in the Family and Society",
+              "ownerName": "Gateway",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=11L253AoEWySTAJXvPHbTMmtekKLT3Rqo"
+            },
+            {
+              "unitTitle": "UNIT-3 Understanding Harmony in the Family and Society",
+              "ownerName": "Witcet",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=10url3drSjuBloR1X5w1GqYd7g0ZQURHA"
+            },
+            {
+              "unitTitle": "UNIT-4 Understanding Harmony in Nature and Existence",
+              "ownerName": "Gateway",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=11M_dBD0KKBqpRo3RgCefS_aicjf90azH"
+            },
+            {
+              "unitTitle": "UNIT-5 Implications of the above Holistic Understanding of Harmony on Professional Ethics",
+              "ownerName": "Gateway",
+              "pdfLink": "https://drive.google.com/uc?export=download&id=11OD0KsK5ri6VzWCIn4tX7ohkog3eF2_1"
+            }
+          ]
+        }
+            
+      
+  ]
+  

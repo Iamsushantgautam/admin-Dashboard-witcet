@@ -73,8 +73,6 @@
 <body>
 
   <!-- ✅ Bootstrap Navigation -->
-
-  <!-- Navbar Include -->
   <%- include('partials/navbar') %>
 
   <!-- ✅ Edit Note Form -->
@@ -86,11 +84,17 @@
         <input name="title" type="text" class="form-control" value="<%= note.title %>" required>
       </div>
 
+      <div class="mb-3">
+        <label class="form-label">Notes Code</label>
+        <input name="notesCode" type="text" class="form-control" value="<%= note.notesCode %>" required>
+      </div>
+
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">Notes Page Path</label>
           <input name="notesPagePath" type="text" class="form-control" value="<%= note.notesPagePath %>">
         </div>
+
         <div class="col-md-6 mb-3">
           <label class="form-label">Image Path</label>
           <input name="imagePath" type="text" class="form-control" value="<%= note.imagePath %>">

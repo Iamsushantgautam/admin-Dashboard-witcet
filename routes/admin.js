@@ -151,6 +151,7 @@ router.post("/add-note", isAuthenticated, async (req, res) => {
   try {
     const {
       title,
+      notesCode,
       notesPagePath,
       imagePath,
       quantumTitle,
@@ -170,6 +171,7 @@ router.post("/add-note", isAuthenticated, async (req, res) => {
 
     const newNote = new Note({
       title,
+      notesCode,
       notesPagePath,
       imagePath: formattedImagePath,
       quantumTitle,

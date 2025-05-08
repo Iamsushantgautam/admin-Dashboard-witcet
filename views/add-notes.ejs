@@ -77,9 +77,15 @@
   <div class="note-form-container">
     <h2>Add Note</h2>
     <form action="/add-note" method="POST">
+
       <div class="mb-3">
         <label class="form-label">Title</label>
         <input name="title" type="text" class="form-control" required placeholder="Note title">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">notesCode</label>
+        <input name="notesCode" type="text" class="form-control" required placeholder="BCS 111">
       </div>
 
       <div class="mb-3">

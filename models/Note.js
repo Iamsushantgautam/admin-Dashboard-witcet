@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const noteSchema = new mongoose.Schema({
   title: String,
+  notesCode:String,
   notesPagePath: String,
   imagePath: String,
   quantumTitle: String,

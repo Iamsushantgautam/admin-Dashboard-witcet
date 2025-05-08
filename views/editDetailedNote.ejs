@@ -8,6 +8,7 @@
     body {
       background-color: #f8f9fa;
     }
+
     .form-container {
       max-width: 800px;
       margin: auto;
@@ -16,17 +17,25 @@
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
+
     .unit-block {
       border: 1px solid #ddd;
       border-radius: 8px;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .remove-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
     }
   </style>
 </head>
 <body>
 
-    <%- include('partials/navbar') %>
+  <%- include('partials/navbar') %>
 
   <div class="container py-5">
     <div class="form-container">
@@ -67,17 +76,20 @@
       const container = document.getElementById("unitsContainer");
 
       const unitBlock = document.createElement("div");
-      unitBlock.className = "unit-block mb-4";
+      unitBlock.className = "unit-block";
 
       unitBlock.innerHTML = `
-        <h6 class="text-primary fw-bold">${unitCount + 1} - Unit</h6>
-        <div class="mb-2">
+        <button type="button" class="btn btn-sm btn-danger remove-btn" onclick="removeUnit(this)">Remove</button>
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Unit Title</label>
           <input type="text" name="units[${unitCount}][unitTitle]" class="form-control" value="${unit.unitTitle || ''}" placeholder="Unit Title" required>
         </div>
-        <div class="mb-2">
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Owner Name</label>
           <input type="text" name="units[${unitCount}][ownerName]" class="form-control" value="${unit.ownerName || ''}" placeholder="Owner Name" required>
         </div>
-        <div class="mb-2">
+        <div class="mb-3">
+          <label class="form-label fw-semibold">PDF Link</label>
           <input type="text" name="units[${unitCount}][pdfLink]" class="form-control" value="${unit.pdfLink || ''}" placeholder="PDF Link" required>
         </div>
       `;
@@ -86,7 +98,12 @@
       unitCount++;
     }
 
-    // Pre-populate existing units
+    function removeUnit(button) {
+      const unitBlock = button.closest('.unit-block');
+      unitBlock.remove();
+    }
+
+    // Populate existing units
     const existingUnits = <%- JSON.stringify(note.units) %>;
     existingUnits.forEach(unit => addUnit(unit));
   </script>
