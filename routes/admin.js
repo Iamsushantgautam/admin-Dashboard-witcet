@@ -257,4 +257,15 @@ router.get("/search", isAuthenticated, async (req, res) => {
   res.render("search-results", { notes });
 });
 
+router.get("/api/search", isAuthenticated, async (req, res) => {
+  const query = req.query.q;
+  const notes = await Note.find({
+    $or: [
+      { title: new RegExp(query, "i") },
+      { tag: new RegExp(query, "i") },
+    ],
+  });
+  res.json(notes);
+});
+
 module.exports = router;
