@@ -34,6 +34,11 @@
                 <p class="card-text"><%= update.description %></p>
                 <p class="text-muted"><strong>Date:</strong> <%= new Date(update.date).toLocaleDateString() %></p>
                 <p class="text-muted"><strong>Time:</strong> <%= update.time %></p>
+                <p class="mb-2">
+                  <span class="badge <%= update.isActive ? 'bg-success' : 'bg-secondary' %>">
+                    <%= update.isActive ? '🟢 Active' : '🔴 Inactive' %>
+                  </span>
+                </p>
                 <div class="d-flex gap-2 mb-2">
                   <% if (update.imageUrl) { %>
                     <button class="btn btn-sm btn-outline-primary" onclick="openImage('<%= update.imageUrl %>')">
@@ -46,9 +51,14 @@
                     </a>
                   <% } %>
                 </div>
-                <div class="mt-auto d-flex justify-content-between">
+                <div class="mt-auto d-flex flex-wrap gap-1">
                   <a href="/updates/edit/<%= update._id %>" class="btn btn-sm btn-outline-primary">Edit</a>
-                  <form action="/updates/delete/<%= update._id %>" method="POST" onsubmit="return confirm('Delete this update?')">
+                  <form action="/updates/toggle/<%= update._id %>" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm <%= update.isActive ? 'btn-outline-warning' : 'btn-outline-success' %>">
+                      <%= update.isActive ? '🔄 Deactivate' : '🔄 Activate' %>
+                    </button>
+                  </form>
+                  <form action="/updates/delete/<%= update._id %>" method="POST" onsubmit="return confirm('Delete this update?')" class="d-inline">
                     <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                   </form>
                 </div>

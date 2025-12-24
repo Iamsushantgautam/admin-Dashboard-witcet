@@ -50,7 +50,7 @@ router.get('/add', requireAuth, (req, res) => {
 // Handle add update
 router.post('/add', requireAuth, async (req, res) => {
   try {
-    const { title, description, date, time, imageUrl, pdfLink } = req.body;
+    const { title, description, date, time, imageUrl, pdfLink, isActive } = req.body;
 
     const newUpdate = new Update({
       title,
@@ -58,7 +58,8 @@ router.post('/add', requireAuth, async (req, res) => {
       date,
       time,
       imageUrl,
-      pdfLink
+      pdfLink,
+      isActive: isActive === 'on' // Checkbox handling
     });
 
     await newUpdate.save();
@@ -86,7 +87,7 @@ router.get('/edit/:id', requireAuth, async (req, res) => {
 // Handle edit update
 router.post('/edit/:id', requireAuth, async (req, res) => {
   try {
-    const { title, description, date, time, imageUrl, pdfLink } = req.body;
+    const { title, description, date, time, imageUrl, pdfLink, isActive } = req.body;
     const update = await Update.findById(req.params.id);
 
     if (!update) {
@@ -99,7 +100,25 @@ router.post('/edit/:id', requireAuth, async (req, res) => {
     update.time = time;
     update.imageUrl = imageUrl;
     update.pdfLink = pdfLink;
+    update.isActive = isActive === 'on'; // Checkbox handling
 
+    await update.save();
+    res.redirect('/updates');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
+
+// Toggle update active status
+router.post('/toggle/:id', requireAuth, async (req, res) => {
+  try {
+    const update = await Update.findById(req.params.id);
+    if (!update) {
+      return res.status(404).send('Update not found');
+    }
+
+    update.isActive = !update.isActive;
     await update.save();
     res.redirect('/updates');
   } catch (error) {
