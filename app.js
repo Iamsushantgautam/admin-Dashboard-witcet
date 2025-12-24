@@ -32,5 +32,8 @@ mongoose.connect(process.env.MONGO_URI).then(() => console.log("Mongo Connected"
 const adminRoutes = require("./routes/admin");
 app.use(adminRoutes);
 
+const updatesRoutes = require("./routes/updates");
+app.use('/updates', updatesRoutes);
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

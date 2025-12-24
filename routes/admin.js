@@ -233,7 +233,7 @@ router.get("/quantum", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/detailednotes/:id", async (req, res) => {
   try {
     const note = await DetailedNote.findById(req.params.id);
     res.render("viewDetailedNote", { note });
